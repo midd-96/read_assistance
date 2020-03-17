@@ -9,7 +9,7 @@ app = Flask(__name__)
 # config MySQL
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'mysql'
 app.config['MYSQL_DB'] = 'radb'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 #init_MySQL
@@ -71,4 +71,5 @@ def register():
     return render_template('register.html', form=form)
 
 if __name__== '__main__':
+    app.secret_key='secret123'
     app.run(debug=True)
